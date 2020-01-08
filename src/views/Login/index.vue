@@ -49,6 +49,8 @@ export default {
       padding: 50px;
       border: 1px solid #999;
       background: #ffffff;
+      /*transition: 3s all ease-in;*/
+      /*-webkit-transition: all ease-in 3s ;*/
       &:hover {
         box-shadow: 0 1px 20px #eeeeee;
       }

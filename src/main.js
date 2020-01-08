@@ -5,6 +5,7 @@ import store from './store'
 import './plugins/element.js'
 import 'element-ui/lib/theme-chalk/reset.css'
 import 'assets/reset.scss'
+import 'assets/font/iconfont.css'
 Vue.config.productionTip = false
 new Vue({
   router,
