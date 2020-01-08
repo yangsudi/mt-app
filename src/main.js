@@ -6,6 +6,7 @@ import './plugins/element.js'
 import 'element-ui/lib/theme-chalk/reset.css'
 import 'assets/reset.scss'
 import 'assets/font/iconfont.css'
+import './icons' // icon
 Vue.config.productionTip = false
 new Vue({
   router,
