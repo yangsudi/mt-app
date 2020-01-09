@@ -63,6 +63,7 @@ import {
   Aside,
   Main,
   Footer,
+  scrollbar,
   Loading,
   MessageBox,
   Message,
@@ -70,6 +71,7 @@ import {
 } from 'element-ui'
 
 Vue.use(Pagination)
+Vue.use(scrollbar)
 Vue.use(Dialog)
 Vue.use(Autocomplete)
 Vue.use(Dropdown)
