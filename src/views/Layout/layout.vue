@@ -3,12 +3,14 @@
     <div>
       <mt-logo />
       <el-aside width="200px" style="background-color: #0575E6">
-        <el-menu :default-openeds="['1', '3']">
-          <el-submenu v-for="(item, index) in sub" :key="index" :index="item.index">
-            <template slot="title">
-              <i :class="item.icon">{{item.title}}</i>
-            </template>
-          </el-submenu>
+        <el-menu
+          router
+          background-color="#0575E6"
+          text-color="#fff"
+          unique-opened
+          mode="vertical"
+        >
+          <slider-menu v-for="(route, index) in routes" :key="index" :route="route"></slider-menu>
         </el-menu>
       </el-aside>
     </div>
@@ -43,9 +45,16 @@
 
 <script>
 import MtLogo from './components/Login'
+import routes from '../../store/index'
+import sliderMenu from './components/sliderMenu'
 export default {
   components: {
-    MtLogo
+    MtLogo,
+    sliderMenu
+  },
+  mounted () {
+  },
+  methods: {
   },
   data () {
     const item = {
@@ -56,35 +65,10 @@ export default {
     return {
       tableData: Array(20).fill(item),
       list: [],
-      sub: [
-        {
-          index: 1,
-          title: '导航一',
-          icon: 'el-icon-location',
-          children: [
-            {
-              title: '分组一',
-              index: '1-1',
-              menu: [
-                { title: '选项1' },
-                { title: '选项2' }
-              ]
-            }
-          ]
-        },
-        {
-          index: 2,
-          title: '导航二',
-          icon: 'el-icon-location',
-          children: []
-        },
-        {
-          index: 3,
-          title: '导航三',
-          icon: 'el-icon-location'
-        }
-      ]
+      routes: routes.state.routes
     }
+  },
+  computed: {
   }
 }
 </script>
