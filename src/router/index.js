@@ -23,16 +23,17 @@ export const routes = [
             name: '三级'
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    path: '/canvas',
+    name: '图片加水印',
+    component: () => import('views/Canvas/index.vue'),
+    children: [
       {
-        path: '/item2',
-        name: '子项2',
-        children: [
-          {
-            path: '/item-4',
-            name: '三级'
-          }
-        ]
+        path: '/add',
+        name: '图片加水印'
       }
     ]
   }

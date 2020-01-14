@@ -1,20 +1,22 @@
 <template>
   <el-container style="height: 100vh; border: 1px solid #eee">
     <div>
-      <mt-logo />
-      <el-aside width="200px" style="background-color: #0575E6">
-        <el-menu
-          router
-          background-color="#0575E6"
-          text-color="#fff"
-          unique-opened
-          mode="vertical"
-        >
-          <slider-menu v-for="(route, index) in routes" :key="index" :route="route"></slider-menu>
-        </el-menu>
-      </el-aside>
+      <el-scrollbar wrap-class="scrollbar-wrapper">
+        <mt-logo />
+        <el-aside width="200px" style="background-color: #0575E6">
+          <el-menu
+            router
+            unique-opened
+            mode="vertical"
+            :collapse="false"
+          >
+            <slider-menu v-for="(route, index) in routes" :key="index" :route="route"></slider-menu>
+          </el-menu>
+        </el-aside>
+      </el-scrollbar>
     </div>
-
+    {{count}}
+    <el-button @click="add">增加</el-button>
     <el-container>
       <el-header style="text-align: right; font-size: 12px">
         <el-dropdown>
@@ -45,7 +47,6 @@
 
 <script>
 import MtLogo from './components/Login'
-import routes from '../../store/index'
 import sliderMenu from './components/sliderMenu'
 export default {
   components: {
@@ -53,8 +54,6 @@ export default {
     sliderMenu
   },
   mounted () {
-  },
-  methods: {
   },
   data () {
     const item = {
@@ -65,7 +64,13 @@ export default {
     return {
       tableData: Array(20).fill(item),
       list: [],
-      routes: routes.state.routes
+      routes: [],
+      count: 0
+    }
+  },
+  methods: {
+    add () {
+      this.$store.dispatch('increate', this.count)
     }
   },
   computed: {
