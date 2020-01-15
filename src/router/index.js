@@ -36,6 +36,16 @@ export const routes = [
         name: '图片加水印'
       }
     ]
+  },
+  // {
+  //   path: '/drag',
+  //   name: '画板',
+  //   component: () => import('views/Drag/index.vue')
+  // }
+  {
+    path: '/effects',
+    name: '特效',
+    component: () => import('views/Effects/index.vue')
   }
 ]
 

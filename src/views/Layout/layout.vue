@@ -15,8 +15,6 @@
         </el-aside>
       </el-scrollbar>
     </div>
-    {{count}}
-    <el-button @click="add">增加</el-button>
     <el-container>
       <el-header style="text-align: right; font-size: 12px">
         <el-dropdown>
@@ -48,6 +46,7 @@
 <script>
 import MtLogo from './components/Login'
 import sliderMenu from './components/sliderMenu'
+
 export default {
   components: {
     MtLogo,
@@ -69,9 +68,6 @@ export default {
     }
   },
   methods: {
-    add () {
-      this.$store.dispatch('increate', this.count)
-    }
   },
   computed: {
   }
