@@ -46,7 +46,6 @@
 <script>
 import MtLogo from './components/Login'
 import sliderMenu from './components/sliderMenu'
-
 export default {
   components: {
     MtLogo,
@@ -63,7 +62,7 @@ export default {
     return {
       tableData: Array(20).fill(item),
       list: [],
-      routes: [],
+      routes: this.$store.state.route || [],
       count: 0
     }
   },

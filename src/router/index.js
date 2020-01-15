@@ -33,7 +33,7 @@ export const routes = [
     children: [
       {
         path: '/add',
-        name: '图片加水印'
+        name: '水印'
       }
     ]
   },
